@@ -1,0 +1,15 @@
+/* styles/Proposals.module.css */
+.pageContainer { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+.header { text-align: center; margin-bottom: 3rem; }
+.title { font-size: 2.5rem; font-weight: 700; }
+.subtitle { font-size: 1.2rem; color: #a0a0b0; }
+.proposalList { display: flex; flex-direction: column; gap: 1rem; }
+.proposalCard { display: flex; justify-content: space-between; align-items: center; gap: 1rem; background-color: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; }
+.status { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem; }
+.debating { background-color: #ffc107; color: #12121e; }
+.voting { background-color: #17a2b8; color: #fff; }
+.passed { background-color: #28a745; color: #fff; }
+.proposalTitle { font-size: 1.3rem; margin: 0; }
+.proposer { color: #a0a0b0; }
+.viewButton, .voteButton { padding: 0.7rem 1.5rem; font-weight: bold; color: #fff; background: #7F00FF; border: none; border-radius: 8px; cursor: pointer; }
+.voteButton { background-color: #28a745; }

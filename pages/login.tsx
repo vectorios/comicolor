@@ -1,15 +1,36 @@
 // pages/login.tsx
-
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../styles/Auth.module.css'; // We reuse the same styles!
+import { useRouter } from 'next/router';
+import styles from '../styles/Auth.module.css';
 
 const LoginPage = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you'd handle login logic (API call, etc.) here
-    alert('Login form submitted!');
+    setIsLoading(true);
+    setError('');
+
+    const response = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      router.push('/app/dashboard');
+    } else {
+      setError(data.message || 'An error occurred.');
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -23,14 +44,30 @@ const LoginPage = () => {
           <h1 className={styles.title}>Welcome Back, Guardian</h1>
           <p className={styles.subtitle}>Enter the Verse through the Frontier Post.</p>
 
+          {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
+
           <div className={styles.formGroup}>
             <label htmlFor="email" className={styles.label}>Email Address</label>
-            <input type="email" id="email" className={styles.input} required />
+            <input 
+              type="email" 
+              id="email" 
+              className={styles.input}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required 
+            />
           </div>
           
           <div className={styles.formGroup}>
             <label htmlFor="password" className={styles.label}>Password</label>
-            <input type="password" id="password" className={styles.input} required />
+            <input 
+              type="password" 
+              id="password" 
+              className={styles.input} 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
 
           <div className={styles.forgotPassword}>
@@ -39,8 +76,8 @@ const LoginPage = () => {
             </Link>
           </div>
 
-          <button type="submit" className={styles.submitButton}>
-            Log In
+          <button type="submit" className={styles.submitButton} disabled={isLoading}>
+            {isLoading ? 'Logging in...' : 'Log In'}
           </button>
 
           <p className={styles.footerText}>

@@ -22,6 +22,19 @@ type PagesPageConfig = {
   }
 }
 
+type ApiRouteConfig = {
+  default: (req: any, res: any) => Promise<Response | void> | Response | void
+  config?: {
+    api?: {
+      bodyParser?: boolean | { sizeLimit?: string }
+      responseLimit?: string | number | boolean
+      externalResolver?: boolean
+    }
+    runtime?: 'edge' | 'experimental-edge' | 'nodejs' | string // necessary unless config is exported as const
+    maxDuration?: number
+  }
+}
+
 
 
 
@@ -321,6 +334,12 @@ type PagesPageConfig = {
   handler satisfies PagesPageConfig
 }
 
+// Validate ../../pages/app/factions/[factionSlug].tsx
+{
+  const handler = {} as typeof import("../../pages/app/factions/[factionSlug].js")
+  handler satisfies PagesPageConfig
+}
+
 // Validate ../../pages/app/factions/[factionSlug]/index.tsx
 {
   const handler = {} as typeof import("../../pages/app/factions/[factionSlug]/index.js")
@@ -450,6 +469,12 @@ type PagesPageConfig = {
 // Validate ../../pages/app/studio/print-on-demand.tsx
 {
   const handler = {} as typeof import("../../pages/app/studio/print-on-demand.js")
+  handler satisfies PagesPageConfig
+}
+
+// Validate ../../pages/app/users/[username].tsx
+{
+  const handler = {} as typeof import("../../pages/app/users/[username].js")
   handler satisfies PagesPageConfig
 }
 
@@ -741,6 +766,34 @@ type PagesPageConfig = {
   handler satisfies PagesPageConfig
 }
 
+// Validate ../../pages/api/auth/login.ts
+{
+  const handler = {} as typeof import("../../pages/api/auth/login.js")
+  handler satisfies ApiRouteConfig
+}
 
+// Validate ../../pages/api/auth/logout.ts
+{
+  const handler = {} as typeof import("../../pages/api/auth/logout.js")
+  handler satisfies ApiRouteConfig
+}
+
+// Validate ../../pages/api/auth/register.ts
+{
+  const handler = {} as typeof import("../../pages/api/auth/register.js")
+  handler satisfies ApiRouteConfig
+}
+
+// Validate ../../pages/api/colors/claim.ts
+{
+  const handler = {} as typeof import("../../pages/api/colors/claim.js")
+  handler satisfies ApiRouteConfig
+}
+
+// Validate ../../pages/api/webhooks/paddle.ts
+{
+  const handler = {} as typeof import("../../pages/api/webhooks/paddle.js")
+  handler satisfies ApiRouteConfig
+}
 
 

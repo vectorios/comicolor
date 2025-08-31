@@ -73,3 +73,16 @@
 .claimButton:hover {
     background: #6a00d6;
 }
+
+/* ... (garder les styles existants) ... */
+
+.freeTag {
+    display: inline-block;
+    background-color: #33FF57;
+    color: #12121e;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}

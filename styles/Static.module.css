@@ -1,0 +1,53 @@
+/* styles/Static.module.css */
+.pageContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem 2rem;
+    color: #343a40;
+}
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 1.5rem;
+}
+.content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+.content p, .content ul {
+    margin-bottom: 1.5rem;
+}
+.content li {
+    margin-bottom: 0.5rem;
+}
+.content a {
+    color: #7F00FF;
+    text-decoration: none;
+    font-weight: 600;
+}
+.content a:hover {
+    text-decoration: underline;
+}
+.jobListing {
+    padding: 1.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+.jobTitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+}
+.jobDetails {
+    color: #6c757d;
+    margin-top: 0.25rem;
+}

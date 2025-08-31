@@ -2,8 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/app/market": "pages/app/market.js",
-  "/app/market/auctions": "pages/app/market/auctions.js",
-  "/app/verse": "pages/app/verse.js"
+  "/app/registry/public-domain": "pages/app/registry/public-domain.js"
 }

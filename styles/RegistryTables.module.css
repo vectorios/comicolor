@@ -1,0 +1,14 @@
+/* styles/RegistryTables.module.css */
+.tablePageContainer { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
+.header { margin-bottom: 2rem; }
+.title { font-size: 2.5rem; font-weight: 700; }
+.subtitle { font-size: 1.2rem; color: #a0a0b0; }
+.table { width: 100%; border-collapse: collapse; background-color: rgba(255, 255, 255, 0.05); border-radius: 12px; overflow: hidden; }
+.table th, .table td { padding: 1.2rem; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.table th { color: #a0a0b0; font-size: 0.9rem; text-transform: uppercase; }
+.table tr:last-child td { border-bottom: none; }
+.link { color: #8cb2ff; text-decoration: none; font-weight: bold; }
+.status { padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: bold; }
+.resolved, .passed { background-color: #28a745; color: #fff; }
+.indeliberation, .debating, .voting { background-color: #ffc107; color: #12121e; }
+.dismissed { background-color: #dc3545; color: #fff; }

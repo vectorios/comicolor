@@ -1,0 +1,22 @@
+/* styles/AdminLayout.module.css */
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    background-color: #1a1a2e;
+    min-height: 100vh;
+    color: #e0e0e0;
+}
+.sidebar {
+    background-color: #161625;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.header { font-size: 1.5rem; font-weight: bold; margin-bottom: 2rem; }
+.header span { color: #e94560; }
+.navList { list-style: none; padding: 0; margin: 0; flex-grow: 1; }
+.navSectionTitle { font-size: 0.8rem; text-transform: uppercase; color: #a0a0b0; padding: 1rem 0 0.5rem 1rem; }
+.navLink { display: block; padding: 0.8rem 1rem; color: #c0c0d0; text-decoration: none; border-radius: 8px; font-weight: 500; }
+.navLink:hover { background-color: rgba(255, 255, 255, 0.1); }
+.navLink.active { background-color: #e94560; color: #fff; }
+.content { padding: 2rem; background-color: #1a1a2e; overflow-y: auto; }

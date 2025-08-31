@@ -1,0 +1,9 @@
+/* styles/AdminCase.module.css */
+.layout { display: grid; grid-template-columns: 1fr 350px; gap: 2rem; }
+.main { background-color: rgba(255,255,255,0.05); border-radius: 8px; padding: 2rem; }
+.sidebar { background-color: rgba(255,255,255,0.05); border-radius: 8px; padding: 2rem; align-self: start; }
+.header { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+.title { font-size: 1.8rem; margin: 0; }
+.caseId { font-family: monospace; color: #a0a0b0; }
+.sidebar h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+.actions button { width: 100%; padding: 0.8rem; margin-bottom: 0.5rem; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; }

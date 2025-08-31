@@ -1,0 +1,16 @@
+/* styles/Messages.module.css */
+.layout { display: grid; grid-template-columns: 350px 1fr; height: calc(100vh - 100px); background-color: rgba(255,255,255,0.05); border-radius: 12px; }
+.conversationList { border-right: 1px solid rgba(255,255,255,0.1); padding: 1rem; overflow-y: auto; }
+.conversationItem { display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: 8px; text-decoration: none; color: #c0c0d0; }
+.conversationItem.active { background-color: #7F00FF; color: #fff; }
+.avatar { width: 48px; height: 48px; border-radius: 50%; background-color: #333; }
+.username { font-weight: bold; }
+.preview { font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chatWindow { display: flex; flex-direction: column; }
+.chatHeader { padding: 1rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 1.2rem; font-weight: bold; }
+.messageArea { flex-grow: 1; padding: 1.5rem; overflow-y: auto; }
+.messageBubble { max-width: 70%; padding: 0.8rem 1rem; border-radius: 15px; margin-bottom: 1rem; }
+.messageBubble.sent { background-color: #7F00FF; color: #fff; border-bottom-right-radius: 3px; margin-left: auto; }
+.messageBubble.received { background-color: rgba(255,255,255,0.1); border-bottom-left-radius: 3px; }
+.inputArea { padding: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
+.messageInput { width: 100%; padding: 1rem; background-color: #12121e; border: 1px solid #a0a0b0; color: #fff; border-radius: 8px; }

@@ -1,0 +1,115 @@
+/* styles/EventDetail.module.css */
+
+.pageContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.eventType {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background-color: #7F00FF;
+    color: #fff;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.date {
+    font-size: 1.2rem;
+    color: #a0a0b0;
+    margin-top: 0.5rem;
+}
+
+.mainLayout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+}
+
+@media (max-width: 992px) {
+    .mainLayout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.detailsSection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.detailsSection p {
+    line-height: 1.8;
+    color: #c0c0d0;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.registerButton {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #33FF57;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.registerButton:hover {
+    background: #28a745;
+}
+
+.participantList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.participantItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem;
+    border-radius: 8px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+}
+
+.username {
+    font-weight: bold;
+    color: #fff;
+}

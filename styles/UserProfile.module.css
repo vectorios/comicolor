@@ -1,0 +1,108 @@
+/* styles/UserProfile.module.css */
+
+.profileHeader {
+    height: 250px;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: -80px; /* Pull content up */
+}
+
+.profileContent {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.mainInfo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.identity {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid #12121e;
+    background-color: #555;
+}
+
+.nameGroup h1 {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.nameGroup p {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin: 0;
+}
+
+.followButton {
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: #7F00FF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.statsBar {
+    display: flex;
+    gap: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.statItem {
+    text-align: center;
+}
+
+.statValue {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: #a0a0b0;
+}
+
+.subNavBar {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+}
+
+.navLink {
+    padding: 1rem 1.5rem;
+    color: #a0a0b0;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 500;
+}
+
+.navLink.active {
+    color: #fff;
+    border-bottom-color: #7F00FF;
+}
+
+.profileBody {
+    padding: 1rem;
+}

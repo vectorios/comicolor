@@ -1,0 +1,21 @@
+/* styles/AccountLayout.module.css */
+.layout {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+}
+.sidebar {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    align-self: start; /* Stick to the top */
+}
+.sidebar h2 { font-size: 1.2rem; margin-bottom: 1.5rem; }
+.navList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.navLink { display: block; padding: 0.8rem 1rem; color: #a0a0b0; text-decoration: none; border-radius: 8px; font-weight: 500; }
+.navLink:hover { background-color: rgba(255, 255, 255, 0.1); color: #fff; }
+.navLink.active { background-color: #7F00FF; color: #fff; }
+.content { min-height: 60vh; }

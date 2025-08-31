@@ -1,0 +1,116 @@
+/* styles/Events.module.css */
+
+.pageContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.subNavBar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.navLink {
+    padding: 0.6rem 1.2rem;
+    color: #a0a0b0;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.navLink:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.navLink.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.eventList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.eventItem {
+    display: flex;
+    gap: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s;
+}
+
+.eventItem:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.dateBox {
+    flex-shrink: 0;
+    width: 80px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 1rem 0;
+}
+
+.month {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #a0a0b0;
+}
+
+.day {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.details {
+    flex-grow: 1;
+}
+
+.eventType {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background-color: #7F00FF;
+    color: #fff;
+}
+
+.eventTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+}
+
+.eventSummary {
+    margin-top: 0.5rem;
+    color: #c0c0d0;
+    line-height: 1.6;
+}

@@ -43,4 +43,27 @@
     color: #fff;
 }
 
-/* We'll add an active state later with useRouter */
+
+.sidebarFooter {
+    margin-top: auto; /* Pousse le pied de la sidebar tout en bas */
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logoutButton {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: rgba(233, 69, 96, 0.2); /* Un rouge subtil pour la déconnexion */
+    border: 1px solid rgba(233, 69, 96, 0.5);
+    color: #e94560;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+    background-color: #e94560;
+    color: #fff;
+}
