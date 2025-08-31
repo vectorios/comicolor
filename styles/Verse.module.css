@@ -1,0 +1,133 @@
+/* styles/Verse.module.css */
+
+.pageContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.subNavBar {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.navLink {
+    padding: 0.6rem 1.2rem;
+    color: #a0a0b0;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.navLink:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.navLink.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.createPostButton {
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: #7F00FF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.createPostButton:hover {
+    background-color: #6a00d6;
+}
+
+.feedContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.postCard {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.postHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #333;
+}
+
+.username {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+.username:hover {
+    text-decoration: underline;
+}
+
+.timestamp {
+    font-size: 0.9rem;
+    color: #a0a0b0;
+}
+
+.postContent p {
+    margin: 0;
+    line-height: 1.6;
+    color: #d0d0d0;
+}
+
+.postAttachment {
+    margin-top: 1rem;
+    border-left: 3px solid #7F00FF;
+    padding-left: 1rem;
+}
+
+.palette {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.swatch {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}

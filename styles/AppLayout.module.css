@@ -1,0 +1,19 @@
+/* styles/AppLayout.module.css */
+.appShell {
+    background-color: #12121e; /* Darker background for the app */
+    color: #f0f0f0;
+    min-height: 100vh;
+}
+
+.mainContent {
+    /* The sidebar is 250px wide, so we offset the main content */
+    margin-left: 250px;
+    padding: 2rem;
+}
+
+/* Add a media query for smaller screens */
+@media (max-width: 768px) {
+    .mainContent {
+        margin-left: 0;
+    }
+}

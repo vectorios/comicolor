@@ -1,0 +1,99 @@
+/* styles/Registry.module.css */
+
+.pageContainer {
+    padding: 0 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a0a0b0;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.searchInput {
+    flex-grow: 1;
+    background-color: #12121e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #7F00FF;
+}
+
+.colorGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.colorCard {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.colorCard:hover {
+    transform: translateY(-5px);
+}
+
+.swatch {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.info {
+    padding: 1rem;
+}
+
+.hexCode {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.owner {
+    font-size: 0.9rem;
+    color: #a0a0b0;
+}
+
+/* Text color utilities for contrast */
+.lightText {
+    color: #f0f0f0;
+}
+.darkText {
+    color: #12121e;
+    text-shadow: none;
+}

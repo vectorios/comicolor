@@ -1,0 +1,58 @@
+/* styles/Header.module.css */
+.header {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: rgba(10, 10, 26, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navLink {
+    color: #c0c0d0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navLink:hover {
+    color: #fff;
+}
+
+.authButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+.loginButton {
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    border: 1px solid #c0c0d0;
+    color: #c0c0d0;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.loginButton:hover {
+    background: #c0c0d0;
+    color: #0a0a1a;
+}

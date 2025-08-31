@@ -1,0 +1,119 @@
+/* styles/Factions.module.css */
+
+.pageContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.subNavBar {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.navLink {
+    padding: 0.6rem 1.2rem;
+    color: #a0a0b0;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.navLink:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.navLink.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.createButton {
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: #7F00FF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.createButton:hover {
+    background-color: #6a00d6;
+}
+
+.factionGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.factionCard {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.factionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.emblem {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 4px solid #fff;
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+.name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.motto {
+    font-size: 0.9rem;
+    color: #a0a0b0;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Helps align cards of different text heights */
+}
+
+.stats {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #c0c0d0;
+}

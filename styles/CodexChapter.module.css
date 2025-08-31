@@ -1,0 +1,49 @@
+/* styles/CodexChapter.module.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    color: #f0f0f0;
+}
+
+.breadcrumb {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #a0a0b0;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.9rem;
+}
+
+.breadcrumb:hover {
+    color: #fff;
+}
+
+.header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 2rem;
+}
+
+.chapterTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.content {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+}
+
+.content p {
+    margin: 0 0 1.5rem 0;
+}
+
+.notFound {
+    text-align: center;
+    padding: 5rem 0;
+}

@@ -1,0 +1,121 @@
+/* styles/Studio.module.css */
+
+.pageContainer {
+    padding: 0 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.studioLayout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    height: calc(100vh - 200px); /* Adjust height based on your layout */
+}
+
+@media (max-width: 992px) {
+    .studioLayout {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
+
+.configPanel {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.configSection h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.productList, .assetList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.productItem, .assetItem {
+    padding: 0.8rem 1rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #c0c0d0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.productItem:hover, .assetItem:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.productItem.active, .assetItem.active {
+    background-color: #7F00FF;
+    color: #fff;
+    border-color: #7F00FF;
+}
+
+.assetItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.assetSwatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.previewPanel {
+    display: flex;
+    flex-direction: column;
+}
+
+.previewWindow {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+/* Mockup styles */
+.mockupMug {
+    width: 250px;
+    height: 250px;
+    border: 15px solid #fff; /* Represents the mug's ceramic */
+    border-radius: 15px 15px 25px 25px;
+    position: relative;
+}
+.mockupMug::after { /* The handle */
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: 40px;
+    width: 50px;
+    height: 100px;
+    border: 15px solid #fff;
+    border-left: none;
+    border-radius: 0 25px 25px 0;
+}

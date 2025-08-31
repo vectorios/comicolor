@@ -1,0 +1,124 @@
+/* styles/Auth.module.css */
+/* This file will be used for login, register, and reset-password pages */
+
+.authContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 4rem 2rem;
+}
+
+.authForm {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.subtitle {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 2.5rem;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #495057;
+}
+
+.input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #7F00FF;
+    box-shadow: 0 0 0 3px rgba(127, 0, 255, 0.15);
+}
+
+.checkboxGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.checkbox {
+    margin-right: 0.8rem;
+    accent-color: #7F00FF; /* Style the checkmark color */
+}
+
+.codexLink {
+    color: #7F00FF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.codexLink:hover {
+    text-decoration: underline;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #7F00FF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+    background: #6a00d6;
+}
+
+.footerText {
+    margin-top: 2rem;
+    text-align: center;
+    color: #6c757d;
+}
+
+.footerLink {
+    color: #7F00FF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footerLink:hover {
+    text-decoration: underline;
+}
+
+/* ADD THIS TO THE END of styles/Auth.module.css */
+
+.forgotPassword {
+    text-align: right;
+    font-size: 0.9rem;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}

@@ -1,0 +1,85 @@
+/* styles/CreatePost.module.css */
+
+.pageContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.editorContainer {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 150px;
+    background: transparent;
+    border: none;
+    color: #f0f0f0;
+    font-size: 1.2rem;
+    font-family: inherit;
+    resize: none;
+    margin-bottom: 1rem;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+.attachmentButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+.attachButton {
+    background: none;
+    border: none;
+    color: #a0a0b0;
+    font-size: 1.5rem; /* For icon fonts */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.attachButton:hover {
+    color: #fff;
+}
+
+.publishButton {
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: #7F00FF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.publishButton:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.publishButton:not(:disabled):hover {
+    background-color: #6a00d6;
+}

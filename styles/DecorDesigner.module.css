@@ -1,0 +1,86 @@
+/* styles/DecorDesigner.module.css */
+
+.pageContainer {
+    padding: 0 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.designerLayout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 992px) {
+    .designerLayout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.controlsPanel {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.controlsPanel h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.colorPalette {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+}
+
+.swatch {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.swatch.active {
+    border-color: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.previewPanel {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* For the interactive room SVG */
+.roomPreview {
+    width: 100%;
+    max-width: 600px;
+}
+
+.roomPart {
+    cursor: pointer;
+    stroke: #555;
+    stroke-width: 2;
+    transition: opacity 0.2s;
+}
+
+.roomPart:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,110 @@
+/* styles/Auctions.module.css */
+
+.pageContainer {
+    padding: 0 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a0a0b0;
+}
+
+/* Re-using the sub-navigation structure */
+.subNavBar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.navLink {
+    padding: 0.6rem 1.2rem;
+    color: #a0a0b0;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.navLink:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.navLink.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Grid for auction listings */
+.auctionGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.auctionCard {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auctionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.swatch {
+    height: 120px;
+    width: 100%;
+}
+
+.info {
+    padding: 1rem;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1rem;
+}
+
+.bidInfo {
+    margin-bottom: 0.5rem;
+}
+
+.bidLabel {
+    font-size: 0.8rem;
+    color: #a0a0b0;
+    text-transform: uppercase;
+}
+
+.bidValue {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #FFC300; /* A golden color for bids */
+}
+
+.timer {
+    font-size: 0.9rem;
+    color: #E74C3C; /* Reddish color for urgency */
+    font-weight: 500;
+}

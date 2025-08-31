@@ -1,0 +1,109 @@
+/* styles/Discover.module.css */
+
+.pageContainer {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    color: #f0f0f0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333; /* Une couleur de texte sombre et lisible */
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666; /* Une couleur plus foncée pour un meilleur contraste */
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.filterBar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filterButton {
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 1px solid #444;
+    color: #a0a0b0;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.filterButton:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+.filterButton.active {
+    background-color: #fff;
+    color: #0a0a1a;
+    border-color: #fff;
+}
+
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.creationCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: block;
+}
+
+.creationCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cardImage {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardContent {
+    padding: 1rem 1.5rem;
+}
+
+.cardTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #fff;
+}
+
+.cardCreator {
+    font-size: 0.9rem;
+    color: #8c8ca3;
+}
+
+.creatorHighlight {
+    font-weight: 600;
+    color: #adade0;
+}

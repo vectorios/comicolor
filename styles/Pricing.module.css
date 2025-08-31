@@ -1,0 +1,142 @@
+/* styles/Pricing.module.css */
+
+.pageContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    color: #212529; /* Dark text for light theme */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #6c757d; /* Softer grey */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.pricingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center; /* Vertically align cards */
+}
+
+.planCard {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.planCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.planCard.highlighted {
+    border: 2px solid #7F00FF;
+    transform: scale(1.05); /* Make it stand out */
+    position: relative;
+    box-shadow: 0 10px 40px rgba(127, 0, 255, 0.2);
+}
+
+.highlightBadge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #7F00FF;
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.planName {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.planPrice {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.planPrice span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6c757d;
+}
+
+.planDescription {
+    color: #6c757d;
+    margin-bottom: 2rem;
+    height: 40px; /* Reserve space */
+}
+
+.featureList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    text-align: left;
+}
+
+.featureItem {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.featureItem::before {
+    content: '✔';
+    color: #28a745; /* Green checkmark */
+    margin-right: 0.8rem;
+    font-weight: bold;
+}
+
+.ctaButton {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.primaryCta {
+    background-color: #7F00FF;
+    color: #fff;
+    border: 1px solid #7F00FF;
+}
+
+.primaryCta:hover {
+    background-color: #6a00d6;
+}
+
+.secondaryCta {
+    background-color: #fff;
+    color: #7F00FF;
+    border: 1px solid #7F00FF;
+}
+
+.secondaryCta:hover {
+    background-color: #f8f9fa;
+}
