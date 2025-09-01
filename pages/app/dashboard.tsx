@@ -6,9 +6,9 @@ import { GetServerSideProps, NextPage } from 'next';
 import { jwtVerify } from 'jose';
 import styles from '../../styles/Dashboard.module.css';
 import AppLayout from '../../components/app/AppLayout';
-import { supabase } from '../../lib/supabaseClient'; // Importer Supabase
+import { supabase } from '../../lib/supabaseClient';
 
-// 1. Mettre à jour le type des props pour inclure les nouvelles données
+// Type pour les données passées à la page
 interface DashboardProps {
   user: {
     username: string;
@@ -19,7 +19,6 @@ interface DashboardProps {
   };
 }
 
-// 2. Mettre à jour la signature du composant
 const DashboardPage: NextPage<DashboardProps> = ({ user, stats }) => {
 
   return (
@@ -37,7 +36,6 @@ const DashboardPage: NextPage<DashboardProps> = ({ user, stats }) => {
           <div className={styles.card}>
             <h2 className={styles.cardTitle}>My Properties</h2>
             <div>
-              {/* 3. Utiliser les nouvelles props pour les statistiques */}
               <span className={styles.statValue}>{stats.colorCount}</span>
               <span className={styles.statLabel}> Sovereign Colors</span>
             </div>
@@ -48,7 +46,6 @@ const DashboardPage: NextPage<DashboardProps> = ({ user, stats }) => {
           </div>
           <div className={styles.card}>
             <h2 className={styles.cardTitle}>Market Watch</h2>
-            {/* Ces données peuvent rester en dur pour le moment */}
             <div>
               <span className={styles.statValue}>0</span>
               <span className={styles.statLabel}> Active Listings</span>
@@ -76,7 +73,7 @@ DashboardPage.getLayout = function getLayout(page: ReactElement) {
   return <AppLayout>{page}</AppLayout>;
 };
 
-// 4. Mettre à jour getServerSideProps pour récupérer les données réelles
+// Fonction qui s'exécute côté serveur avant de rendre la page
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { req } = context;
   const token = req.cookies.auth_token;
@@ -89,27 +86,21 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
     const { payload } = await jwtVerify(token, new TextEncoder().encode(JWT_SECRET));
     
-    // Extraire l'ID de l'utilisateur du token
     const userId = payload.userId as string;
     const username = payload.username as string;
 
-    if (!userId || !username) {
-        throw new Error('Invalid token payload');
-    }
+    if (!userId || !username) throw new Error('Invalid token payload');
 
-    // 5. Exécuter les requêtes vers Supabase en parallèle pour plus d'efficacité
+    // Exécuter les requêtes vers Supabase en parallèle
     const [colorRes, creationRes] = await Promise.all([
-      // Compter les couleurs de l'utilisateur
       supabase.from('colors').select('hex_code', { count: 'exact', head: true }).eq('owner_id', userId),
-      // Compter les créations de l'utilisateur
       supabase.from('creations').select('id', { count: 'exact', head: true }).eq('creator_id', userId)
     ]);
 
-    // Gérer les erreurs potentielles des requêtes
     if (colorRes.error) throw new Error(`Failed to fetch color count: ${colorRes.error.message}`);
     if (creationRes.error) throw new Error(`Failed to fetch creation count: ${creationRes.error.message}`);
 
-    // 6. Passer les données réelles en props
+    // Passer les données réelles en props à la page
     return {
       props: {
         user: {

@@ -3,7 +3,8 @@ import Head from 'next/head';
 import styles from '../../../styles/PublicDomain.module.css';
 import AppLayout from '../../../components/app/AppLayout';
 import { supabase } from '../../../lib/supabaseClient';
-// NOTE: L'import direct de 'Paddle' est volontairement omis ici.
+import { GetServerSideProps } from 'next';
+import { jwtVerify } from 'jose';
 
 interface PublicColor {
     hex_code: string;
@@ -12,15 +13,19 @@ interface PublicColor {
     is_freebie: boolean;
 }
 
-// Déclare à TypeScript que la propriété `Paddle` peut exister sur l'objet `window`.
-// C'est nécessaire car la librairie Paddle.js s'attache elle-même à `window`.
+interface PageProps {
+  user: {
+    email: string; // Nous allons récupérer l'email du serveur
+  } | null;
+}
+
 declare global {
   interface Window {
     Paddle: any;
   }
 }
 
-const PublicDomainPage = () => {
+const PublicDomainPage = ({ user }: PageProps) => {
   const [colors, setColors] = useState<PublicColor[]>([]);
   const [loading, setLoading] = useState(true);
   const [claimingId, setClaimingId] = useState<string | null>(null);
@@ -46,7 +51,6 @@ const PublicDomainPage = () => {
     setClaimingId(color.hex_code);
 
     if (color.is_freebie) {
-        // --- LOGIQUE POUR LA COULEUR GRATUITE ---
         const response = await fetch('/api/colors/claim', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -55,34 +59,34 @@ const PublicDomainPage = () => {
         const data = await response.json();
         if (response.ok) {
             alert(data.message);
-            fetchPublicColors(); // Rafraîchir la liste
+            fetchPublicColors();
         } else {
             alert(`Error: ${data.message}`);
         }
     } else {
-        // --- LOGIQUE POUR LA COULEUR PAYANTE AVEC PADDLE ---
-        if (window.Paddle) {
-            // Dans une vraie application, cet email viendrait des informations de l'utilisateur connecté.
-            // Il faudrait le récupérer via un contexte ou une librairie de state management.
-            const userEmailForPaddle = "myiverydel@example.com"; // Placeholder
+        // Logique payante avec Paddle
+        if (!user?.email) {
+            alert("Could not find your user information. Please try logging in again.");
+            setClaimingId(null);
+            return;
+        }
 
+        if (window.Paddle) {
             window.Paddle.Checkout.open({
                 items: [{
-                    // IMPORTANT: Remplacez ceci par l'ID de votre prix créé dans le dashboard Paddle Sandbox
-                    priceId: 'pri_01k40q5b45yg862085hyr8415n', 
+                    priceId: 'pri_01k40q5b45yg862085hyr8415n',
                     quantity: 1
                 }],
                 customer: {
-                    email: userEmailForPaddle,
+                    email: user.email,
                 },
                 customData: {
-                    // On passe les infos nécessaires au webhook pour qu'il sache quelle couleur attribuer
                     hex_code: color.hex_code,
                 }
             });
         } else {
             alert("Payment system is not available. Please try again later.");
-            console.error("window.Paddle is not defined. It may have failed to initialize in _app.tsx.");
+            console.error("window.Paddle is not defined.");
         }
     }
 
@@ -90,7 +94,6 @@ const PublicDomainPage = () => {
   };
 
   if (loading && colors.length === 0) {
-    // Affiche un message de chargement plus centré
     return <div style={{display:'flex', justifyContent:'center', alignItems:'center', height:'50vh'}}>Loading the frontier...</div>;
   }
 
@@ -127,6 +130,38 @@ const PublicDomainPage = () => {
       </div>
     </>
   );
+};
+
+// On ajoute getServerSideProps pour récupérer l'email de l'utilisateur connecté
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { req } = context;
+  const token = req.cookies.auth_token;
+  const JWT_SECRET = process.env.JWT_SECRET;
+
+  if (!token || !JWT_SECRET) {
+    // L'utilisateur n'est pas connecté, le middleware le redirigera
+    return { props: { user: null } };
+  }
+
+  try {
+    const { payload } = await jwtVerify(token, new TextEncoder().encode(JWT_SECRET));
+    
+    // On doit maintenant récupérer l'email depuis la DB car il n'est pas dans le token
+    const { data: user, error } = await supabase
+      .from('users')
+      .select('email')
+      .eq('id', payload.userId)
+      .single();
+
+    if (error || !user) {
+        throw new Error("User not found for token ID");
+    }
+
+    return { props: { user: { email: user.email } } };
+  } catch (error) {
+    console.error("getServerSideProps Error on Public Domain:", error);
+    return { props: { user: null } };
+  }
 };
 
 PublicDomainPage.getLayout = function getLayout(page: ReactElement) {

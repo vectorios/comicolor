@@ -1,0 +1,107 @@
+/* styles/Welcome.module.css */
+.container {
+    min-height: 100vh;
+    background-color: #f4f1ea; /* Couleur parchemin / papier de qualité */
+    color: #3a3a3a; /* Texte presque noir */
+    font-family: 'Georgia', 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.decree {
+    width: 100%;
+    max-width: 800px;
+    border: 10px double #c0b283; /* Bordure double dorée/laiton */
+    padding: 3rem;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.mainText {
+    font-size: 1.2rem;
+    line-height: 2;
+    margin: 2rem 0;
+}
+
+.guardianName {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    margin: 1rem 0;
+    border-top: 1px solid #c0b283;
+    border-bottom: 1px solid #c0b283;
+    padding: 1rem 0;
+}
+
+.assetsTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.assetContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.colorAsset {
+    text-align: center;
+}
+
+.swatch {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #3a3a3a;
+    margin: 0 auto 1rem auto;
+}
+
+.colorName {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.hexCode {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.walletAsset {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.button {
+    margin-top: 4rem;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background: #3a3a3a;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background: #000;
+}

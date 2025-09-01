@@ -2,5 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/app/registry/public-domain": "pages/app/registry/public-domain.js"
+  "/register": "pages/register.js",
+  "/api/auth/register": "pages/api/auth/register.js",
+  "/app/dashboard": "pages/app/dashboard.js"
 }

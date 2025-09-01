@@ -26,6 +26,7 @@
     font-weight: 600;
     color: #c0c0d0;
     margin-bottom: 1.5rem;
+    margin-top: 0;
 }
 .statValue {
     font-size: 2.5rem;
@@ -34,6 +35,7 @@
 }
 .statLabel {
     color: #a0a0b0;
+    margin-left: 0.5rem;
 }
 .quickActionsList {
     display: flex;

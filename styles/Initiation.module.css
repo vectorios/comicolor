@@ -1,0 +1,73 @@
+/* styles/Initiation.module.css */
+.container {
+    min-height: 100vh;
+    background-color: #050510;
+    color: #00ff41; /* Vert phosphore classique */
+    font-family: 'VT323', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-image: 
+        linear-gradient(rgba(5, 5, 16, 0.95), rgba(5, 5, 16, 0.95)),
+        url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+.mainContent {
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #00ff41;
+    background-color: rgba(0, 255, 65, 0.05);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+    padding: 2rem;
+}
+
+.terminalText { font-size: 1.5rem; line-height: 1.8; white-space: pre-wrap; margin-bottom: 1rem; }
+.terminalInput { background: transparent; border: none; color: #fff; font-family: 'VT323', monospace; font-size: 1.5rem; width: 100%; margin-left: 1rem; }
+.terminalInput:focus { outline: none; }
+.formGroup { margin-bottom: 1.5rem; }
+.label { display: block; margin-bottom: 0.5rem; }
+.select { composes: terminalInput; background-color: #050510; border: 1px solid #00ff41; padding: 0.5rem; }
+
+.cursor { display: inline-block; width: 12px; height: 1.5rem; background-color: #00ff41; animation: blink 1s step-end infinite; }
+@keyframes blink { from, to { background-color: transparent; } 50% { background-color: #00ff41; } }
+
+.button { background-color: transparent; border: 1px solid #00ff41; color: #00ff41; padding: 0.8rem 1.5rem; font-family: 'VT323', monospace; font-size: 1.2rem; cursor: pointer; transition: all 0.2s; }
+.button:hover { background-color: #00ff41; color: #050510; }
+.button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.verdict { font-size: 2rem; text-align: center; color: #fff; margin-bottom: 1rem; }
+.archetype { font-size: 2.5rem; font-weight: bold; text-shadow: 0 0 10px #00ff41; }
+.explanation { font-size: 1.2rem; color: #c0c0d0; text-align: center; margin-bottom: 2rem; }
+
+.analysisContainer { text-align: center; font-size: 1.5rem; }
+.loader { width: 100%; height: 1.5rem; border: 1px solid #00ff41; margin-bottom: 1rem; padding: 2px; }
+.loaderBar { width: 0%; height: 100%; background-color: #00ff41; animation: loading 3s ease-out forwards; }
+@keyframes loading { 0% { width: 0%; } 100% { width: 100%; } }
+
+.endowmentContainer { display: flex; gap: 2rem; margin-top: 2rem; text-align: left; }
+.packDescription, .archetypeDescription { flex: 1; }
+.packDescription ul { list-style: none; padding: 0; font-size: 1.2rem; }
+.packDescription li { margin-bottom: 1rem; }
+.price { font-size: 1.5rem; font-weight: bold; color: #fff; margin-top: 1rem; }
+
+.questionBlock { margin-bottom: 2rem; font-size: 1.5rem; }
+.optionsList { list-style: none; padding-left: 2rem; margin-top: 1rem; }
+.optionLabel { display: block; margin-bottom: 0.5rem; cursor: pointer; color: #c0c0d0; transition: color 0.2s; }
+.optionLabel:hover { color: #fff; }
+.radioInput { opacity: 0; width: 0; height: 0; }
+.radioInput + span::before { content: '[ ] '; font-family: 'VT323', monospace; color: #00ff41; }
+.radioInput:checked + span::before { content: '[X] '; }
+.buttonContainer { display: flex; justify-content: space-between; margin-top: 2rem; }
+
+.processingContainer { font-size: 1.2rem; }
+.statusLine { opacity: 0; animation: fadeIn 0.5s forwards; }
+.statusLine:nth-child(2) { animation-delay: 1s; }
+.statusLine:nth-child(3) { animation-delay: 2s; }
+.statusLine:nth-child(4) { animation-delay: 3s; }
+.statusLine:nth-child(5) { animation-delay: 4s; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.paymentContainer { text-align: center; }
+.sacrificeText { font-size: 1.8rem; margin-bottom: 2rem; color: #fff; }
+.paypalContainer { margin-top: 2rem; background-color: #fff; padding: 1.5rem; border-radius: 4px; }
